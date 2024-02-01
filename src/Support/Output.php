@@ -38,7 +38,7 @@
  */
 
 
-namespace Cclilshy\WorkerCoroutine;
+namespace Cclilshy\WorkerCoroutine\Support;
 
 use Throwable;
 use function explode;

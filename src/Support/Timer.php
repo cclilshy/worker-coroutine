@@ -38,7 +38,7 @@
  */
 
 
-namespace Cclilshy\WorkerCoroutine;
+namespace Cclilshy\WorkerCoroutine\Support;
 
 use Cclilshy\WorkerCoroutine\Coroutine\Coroutine;
 use Cclilshy\WorkerCoroutine\Coroutine\CoroutineMap;

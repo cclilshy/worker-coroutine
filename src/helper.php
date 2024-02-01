@@ -40,7 +40,7 @@
 namespace Co;
 
 use Cclilshy\WorkerCoroutine\Coroutine\Coroutine;
-use Cclilshy\WorkerCoroutine\Timer;
+use Cclilshy\WorkerCoroutine\Support\Timer;
 use Closure;
 use Throwable;
 

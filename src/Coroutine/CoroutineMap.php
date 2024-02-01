@@ -40,9 +40,9 @@
 
 namespace Cclilshy\WorkerCoroutine\Coroutine;
 
-use Cclilshy\WorkerCoroutine\Output;
 use Cclilshy\WorkerCoroutine\Coroutine\Exception\TimeoutException;
 use Cclilshy\WorkerCoroutine\Standard\MapInterface;
+use Cclilshy\WorkerCoroutine\Support\Output;
 use Fiber;
 use SplPriorityQueue;
 use Throwable;

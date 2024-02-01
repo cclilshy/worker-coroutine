@@ -18,5 +18,6 @@
   "require": {
     "workerman/workerman": "^4.1",
     "cclilshy/container": "^1.0"
-  }
+  },
+  "version": "v0.0.1"
 }

@@ -44,7 +44,7 @@ use Cclilshy\Container\Container;
 use Cclilshy\WorkerCoroutine\Coroutine\Exception\Exception;
 use Cclilshy\WorkerCoroutine\Coroutine\Exception\TimeoutException;
 use Cclilshy\WorkerCoroutine\Event\Event;
-use Cclilshy\WorkerCoroutine\Output;
+use Cclilshy\WorkerCoroutine\Support\Output;
 use Closure;
 use Fiber;
 use Throwable;

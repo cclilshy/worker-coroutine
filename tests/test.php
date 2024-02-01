@@ -1,17 +1,19 @@
 <?php declare(strict_types=1);
 
-use Cclilshy\WorkerCoroutine\Coroutine\CoroutineMap;
-use Cclilshy\WorkerCoroutine\Output;
-use Cclilshy\WorkerCoroutine\Timer as CoroutineTimer;
+use Cclilshy\WorkerCoroutine\Support\Loader;
+use Cclilshy\WorkerCoroutine\Support\Output;
 use Workerman\Connection\TcpConnection;
-use Workerman\Timer;
 use Workerman\Worker;
 
-include __DIR__ . '/vendor/autoload.php';
+include __DIR__ . '/../vendor/autoload.php';
 
-$tcpService                = new Worker('tcp://127.0.0.1:8001');
-$tcpService->onWorkerStart = fn() => install();
-$tcpService->onMessage     = function (TcpConnection $tcpConnection, string $message) {
+$tcpService = new Worker('tcp://127.0.0.1:8001');
+
+$tcpService->onWorkerStart = function () {
+    Loader::install();
+};
+
+$tcpService->onMessage = function (TcpConnection $tcpConnection, string $message) {
     /**
      * Demo1: 不堵塞延时3秒后向客户端发送数据
      */
@@ -48,21 +50,4 @@ try {
     Worker::runAll();
 } catch (Exception $exception) {
     Output::printException($exception);
-}
-
-/**
- * 安装协程辅助
- * @return void
- */
-function install(): void
-{
-    CoroutineMap::initialize();
-    CoroutineTimer::initialize();
-
-    // 计时器心跳
-    Timer::add(1, fn() => CoroutineTimer::heartbeat());
-    // 高频心跳消费
-    Timer::add(1, fn() => CoroutineMap::consumption());
-    // 低频心跳清理
-    Timer::add(1, fn() => CoroutineMap::gc());
 }
