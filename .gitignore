@@ -1,1 +1,7 @@
+.idea
+
 /vendor/
+
+composer.lock
+
+worker-coroutine.iml
