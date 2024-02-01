@@ -1,0 +1,22 @@
+{
+  "name": "cclilshy/worker-coroutine",
+  "autoload": {
+    "psr-4": {
+      "Cclilshy\\WorkerCoroutine\\": "src/"
+    },
+    "files": [
+      "src/helper.php"
+    ]
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "cclilshy",
+      "email": "jingnigg@gmail.com"
+    }
+  ],
+  "require": {
+    "workerman/workerman": "^4.1",
+    "cclilshy/container": "^1.0"
+  }
+}
